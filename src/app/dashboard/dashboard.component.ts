@@ -3,6 +3,7 @@ import { tap } from 'rxjs';
 
 import { Question } from 'src/app/model/models';
 import { CrudService } from 'src/app/service/crud.service';
+import { Options } from 'src/app/types/types';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,8 +11,8 @@ import { CrudService } from 'src/app/service/crud.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  public questionObj: any = new Question();
-  public optionArrayToChild: any = [];
+  public questionObj: Question = new Question();
+  public optionArrayToChild: Options[] = [];
 
   constructor(private crudService: CrudService) {}
 
@@ -19,7 +20,7 @@ export class DashboardComponent implements OnInit {
     this.getQuestion();
   }
 
-  onOutputOptions(arrData: any) {
+  onOutputOptions(arrData: Options[]) {
     this.optionArrayToChild = arrData;
   }
 

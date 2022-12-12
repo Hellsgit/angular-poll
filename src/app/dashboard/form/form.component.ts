@@ -73,6 +73,8 @@ export class FormComponent implements OnInit {
 
     this.crudService.editOption(this.optionObj).subscribe({
       next: () => {
+        // clear obj
+        this.optionObj = <Option>{};
         this.ngOnInit();
       },
       error: (err) => {
