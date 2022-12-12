@@ -1,0 +1,29 @@
+$blue: #184b64;
+$gray-light: #e3e3e3;
+$black: black;
+$white: white;
+
+$primary: $blue;
+$secondary: $gray-light;
+
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$form-check-input-border-radius: 0;
+
+@import "~bootstrap/scss/bootstrap";
+
+html,
+body,
+.container-fluid {
+  background-color: $blue;
+}
+
+.outline-dark {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.poll-btn-width {
+  width: 68px;
+}

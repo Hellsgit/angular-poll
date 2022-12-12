@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-lg-6 outline-dark">
+    <h5 class="text-primary">{{ title }}</h5>
+
+    <form [formGroup]="pollAnswerForm" (ngSubmit)="onSubmit()">
+      <div *ngFor="let option of poll">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            id="{{ option.id }}"
+            type="radio"
+            value="{{ option.id }}"
+            name="pollAnswer"
+            formControlName="pollAnswer"
+          />
+          <label class="form-check-label" for="{{ option.id }}">{{
+            option.option_name
+          }}</label>
+        </div>
+      </div>
+      <div>
+        <p
+          *ngIf="disableVote"
+          class="mt-5 d-flex justify-content-center text-danger"
+        >
+          You need at least two options to vote
+        </p>
+
+        <div class="mt-5 d-flex justify-content-center">
+          <button
+            class="btn btn-outline-dark poll-btn-width"
+            type="submit"
+            [disabled]="disableVote"
+          >
+            Vote
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-lg-6 outline-dark vertical-space">
+    <div class="top">
+      <div *ngFor="let item of chart">
+        <div class="poll__option-info">
+          <span class="poll__percentage" [style.width.%]="item.percentage"
+            >{{ item.percentage }}%</span
+          >
+          <span class="poll__label">{{ item.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <h5 class="text-primary">Total votes: {{ totalVotes }}</h5>
+    </div>
+  </div>
+</div>

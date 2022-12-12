@@ -1,0 +1,12 @@
+{
+  "options": [
+    {
+      "id": 1,
+      "option_name": "Hans",
+      "votes": 0
+    }
+  ],
+  "question": {
+    "title": "Hoe heet jij?"
+  }
+}
